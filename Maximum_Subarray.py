@@ -1,4 +1,6 @@
 # https://leetcode.com/problems/maximum-subarray/
+# see your notes
+
 class Solution:
     def maxSubArray(self, nums):
         # 1 Divide

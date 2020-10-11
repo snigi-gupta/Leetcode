@@ -40,7 +40,7 @@ class Solution:
             result[i] = result[i] * R
             R *= nums[i]
             i -= 1
-        return  result
+        return result
 
 if __name__ == "__main__":
     obj = Solution()
