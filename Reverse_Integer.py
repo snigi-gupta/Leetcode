@@ -47,6 +47,7 @@ class Solution:
 
         return res
 
+
 if __name__ == "__main__":
     obj = Solution()
     obj.reverse(x=123) # ans 321
