@@ -18,6 +18,7 @@ class Stack:
     def get_stack(self):
         return self.stack
 
+
 class Solution:
     def validate(self, brackets):
         isMatch = {")": "(", "]": "[", "}": "{"}
@@ -36,11 +37,12 @@ class Solution:
                         flag = False
             idx += 1
         if obj.stack == [] and flag:
-            return  True
+            return True
         else:
             return False
 
 
 if __name__ == "__main__":
     newObj = Solution()
-    print(newObj.validate(brackets="[{}"))
+    # print(newObj.validate(brackets="[{}"))
+    print(newObj.validate(brackets="}"))
