@@ -4,8 +4,10 @@ class TreeNode:
         self.val = val
         self.left = left
         self.right = right
+
     def printTree(self):
-        print(self.val)
+        print(self.val, end="  ")
+
         if self.left:
             self.left.printTree()
 
@@ -26,6 +28,7 @@ class TreeNode:
         else:
             self.val = leaf
 
+
 class Solution:
     def isSameTree(self, p: TreeNode, q: TreeNode) -> bool:
         def check_tree(firstNode, secondNode):
@@ -40,16 +43,20 @@ class Solution:
                 return check_tree(firstNode.left, secondNode.left) and check_tree(firstNode.right, secondNode.right)
         return check_tree(p,q)
 
+
 root = TreeNode(7)
 root.insertLeaf(6)
 root.insertLeaf(8)
 root.insertLeaf(4)
+print("First tree")
 root.printTree()
 
 root2 = TreeNode(7)
 root2.insertLeaf(6)
 root2.insertLeaf(9)
 root2.insertLeaf(4)
+print("")
+print("Second tree")
 root2.printTree()
 
 obj = Solution()
