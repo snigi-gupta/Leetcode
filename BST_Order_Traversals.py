@@ -1,4 +1,4 @@
-# BST Preorder Traversal
+# BST Order Traversal
 
 
 class TreeNode:
@@ -56,7 +56,6 @@ if __name__ == "__main__":
     root.insertLeaf(9)
     root.insertLeaf(4)
     root.insertLeaf(8)
-
 
     obj = Solution()
     print("Pre-Order: ", obj.preorder(root, []))
