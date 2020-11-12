@@ -1,5 +1,7 @@
 # BST Calculate Tree Height
-
+"""
+This code calculates the height of a tree using both bottom-up and top-down approach.
+"""
 class TreeNode:
     def __init__(self, val, left=None, right=None):
         self.val = val
