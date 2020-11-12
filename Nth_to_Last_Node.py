@@ -1,5 +1,5 @@
 # https://www.educative.io/courses/ds-and-algorithms-in-python/mE23Jj5pp93
-
+#INCOMPLETE
 
 class ListNode:
     def __init__(self, val):
@@ -42,7 +42,6 @@ class Solution:
                 return current
             current = current.next
             n -= 1
-
 
 
 if __name__ == "__main__":
