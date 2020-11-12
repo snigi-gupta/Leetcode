@@ -60,13 +60,13 @@ class Solution:
 
 
 
-"""
-        20
-    9          35
-3           31
-"""
-
 if __name__ == "__main__":
+    """
+    This creates a BST
+        20
+    9       35
+3        31
+    """
     tree = Tree(20)
     tree.insertLeaf(9, tree.root)
     tree.insertLeaf(3, tree.root)
@@ -79,3 +79,32 @@ if __name__ == "__main__":
 
     obj = Solution()
     print(obj.isBalanced(tree.root))
+
+    """
+    This creates a Binary Tree
+        3
+    9       20
+        15      7
+    """
+    binaryTree = TreeNode(3)
+    binaryTree.left = TreeNode(9)
+    binaryTree.right = TreeNode(20)
+    binaryTree.right.left = TreeNode(15)
+    binaryTree.right.right =TreeNode(7)
+    print("Binary Tree balanced?", obj.isBalanced(binaryTree))
+
+    """
+            1
+        2       2
+    3       3
+4       4
+    """
+    binaryTree2 = TreeNode(1)
+    binaryTree2.left = TreeNode(2)
+    binaryTree2.right = TreeNode(2)
+    binaryTree2.left.left = TreeNode(3)
+    binaryTree2.left.right =TreeNode(3)
+    binaryTree2.left.left.left =TreeNode(4)
+    binaryTree2.left.left.right =TreeNode(4)
+    print("Binary Tree balanced?", obj.isBalanced(binaryTree2))
+
