@@ -1,5 +1,8 @@
 # BST Order Traversal
+"""
+This code prints nodes of tree in Pre-order, In-order and Post-Order (DFS)
 
+"""
 
 class TreeNode:
     def __init__(self, val, left=None, right=None):
