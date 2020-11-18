@@ -1,48 +1,42 @@
+# https://leetcode.com/problems/path-sum/
+# https://www.youtube.com/watch?v=Hg82DzMemMI
+
+
 class TreeNode:
     def __init__(self, val=0, left=None, right=None):
         self.val = val
         self.left = left
         self.right = right
-    def printTree(self):
-        print(self.val)
-        if self.left:
-            self.left.printTree()
-
-        if self.right:
-            self.right.printTree()
-
-    def insertLeaf(self, leaf):
-        if self.val > leaf:
-            if self.left is None:
-                self.left = TreeNode(leaf)
-            else:
-                self.left.insertLeaf(leaf)
-        elif self.val < leaf:
-            if self.right is None:
-                self.right = TreeNode(leaf)
-            else:
-                self.right.insertLeaf(leaf)
-        else:
-            self.val = leaf
 
 
 class Solution:
-
-    def hasPathSum(self, root: 'TreeNode', sum: 'int') -> 'bool':
+    def hasPathSum(self, root, _sum):
         if not root:
             return False
-        if not root.left and not root.right and root.val == sum:
+        elif not root.left and not root.right and _sum - root.val == 0:
             return True
-        sum -= root.val
-        return self.hasPathSum(root.left, sum) or self.hasPathSum(root.right, sum)
+        else:
+            return self.hasPathSum(root.left, _sum - root.val) or self.hasPathSum(root.right, _sum - root.val)
 
 
 if __name__ == "__main__":
-    obj = Solution()
-    root = TreeNode(7)
-    root.insertLeaf(6)
-    root.insertLeaf(8)
-    root.insertLeaf(4)
-    root.printTree()
 
-    print(obj.hasPathSum(root, 17))
+    """
+            5
+        4       8
+    11        13    4
+7       2               1
+    """
+    root = TreeNode(5)
+    root.left = TreeNode(4)
+    root.left.left = TreeNode(11)
+    root.left.left.left = TreeNode(7)
+    root.left.left.right = TreeNode(2)
+    root.right = TreeNode(8)
+    root.right.left = TreeNode(13)
+    root.right.right = TreeNode(4)
+    root.right.right.right = TreeNode(4)
+
+    obj = Solution()
+    print(obj.hasPathSum(root, 22))
+
