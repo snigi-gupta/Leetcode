@@ -34,11 +34,12 @@ class Solution:
     def removeDuplicateStack(self, s):
         stack = []
         for letter in s:
-            if stack and letter == stack[-1]:
+            if stack and (letter == stack[-1]):
                 stack.pop()
             else:
                 stack.append(letter)
         return ''.join(stack)
+
 
 if __name__ == "__main__":
     obj = Solution()
