@@ -1,5 +1,8 @@
 # https://leetcode.com/problems/number-of-1-bits/
-
+"""
+The idea is that a number AND with 1 will always result 1 for the right most bit.
+The we do right shift to eliminate that bit and count the next one.
+"""
 class Solution:
     def hammingWeight(self, n: int) -> int:
         result = 0

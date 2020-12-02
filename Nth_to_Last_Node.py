@@ -1,5 +1,5 @@
 # https://www.educative.io/courses/ds-and-algorithms-in-python/mE23Jj5pp93
-#INCOMPLETE
+# INCOMPLETE
 
 class ListNode:
     def __init__(self, val):
@@ -35,23 +35,32 @@ class LinkedList:
 
 
 class Solution:
-    def print_nth_to_lastnode(self, ll, list_len, n):
+    def print_nth_to_lastnode(self, ll, nth):
+        # calculate length
         current = ll.head
+        length = 0
         while current:
-            if n == 0:
-                return current
+            length += 1
             current = current.next
-            n -= 1
+        print("length", length)
+        current = ll.head
+
+        while length != nth and current.next:
+            current = current.next
+            length -= 1
+        return current.val
 
 
 if __name__ == "__main__":
     ll = LinkedList()
     mylist = [1, 4, 1, 2, 2, 3, 4]
+    # mylist = ["A", "B", "C", "D"]
     for i in mylist:
         ll.append(i)
     ll.printnode()
     list_len = ll.length(ll.head)
+    print(list_len)
 
     obj = Solution()
-    nthnode = obj.print_nth_to_lastnode(ll=ll, list_len=list_len, n=4)
-    nthnode.printnode()
+    nthnode = obj.print_nth_to_lastnode(ll, nth=2)
+    print("nth_node", nthnode)
