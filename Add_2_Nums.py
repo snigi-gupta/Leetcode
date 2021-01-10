@@ -81,8 +81,6 @@ if __name__ == "__main__":
     result = addTwoNumsObj.addTwoNumbers(l1Node, l2Node)
     result.traverse()
 
-
-
     """
     Uncomment below to simple create a linked list
     """
